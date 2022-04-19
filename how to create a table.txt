@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS student(
+	student_id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	first_name varchar(50) NOT NULL,
+	last_name varchar(50) NOT NULL,
+	email varchar(100) NOT NULL UNIQUE,
+	created_at TIMESTAMPTZ DEFAULT NOW(),
+	updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+
+FOR CREATING ROWS AND COLUMN WITH INFO
+INSERT INTO student( first_name, last_name, email) VALUES ( 'Luca', 'Mura', 'luca@gmail'), ( 'Lu', 'Mu', 'lu@gmail'), ( 'Ca', 'ra', 'ca@gmail'), ( 'Ste', 'Mu', 'gigio@gmail'), ( 'Lo', 'Renzo', 'lore@gmail') RETURNING *
+
+
+FOR UPDATE
+UPDATE student SET first_name='Marco', last_name='Marconi' WHERE student_id=2 RETURNING *
+
+
+for deleting
+DELETE FROM student WHERE student_id=5

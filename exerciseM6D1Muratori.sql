@@ -60,7 +60,7 @@ where amount between '2' and '5'
 -- content
 
 CREATE TABLE IF NOT EXISTS blog(
-	student_id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	blog_id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	title varchar(50) NOT NULL,
 	category varchar(50) NOT NULL,
 	_content varchar(100) NOT NULL UNIQUE,

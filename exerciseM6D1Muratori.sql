@@ -25,10 +25,12 @@ SELECT 	* from city where city like '%e%'
 --select all payments which happened between 2007-02-15 - 2007-02-20 and join customer who made payment
 SELECT 
 	payment_date,
-	customer.customer_id
+	customer.customer_id,
+	customer.first_name||' '||customer.last_name as customer
 from payment
 JOIN customer on payment.customer_id=customer.customer_id
 where payment_date between '2007-02-15' and '2007-02-20'
+order by customer asc
 
 ---------------------------------------------------------
 --select all films and sort by title

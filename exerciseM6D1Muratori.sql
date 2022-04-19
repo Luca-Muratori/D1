@@ -1,5 +1,5 @@
 --  select all stores from store table join address,city,country tables and get full_address of stores by string concat
- SELECT 
+SELECT 
  	store.store_id,
  	first_name,
  	last_name,
@@ -7,8 +7,8 @@
  from store
  JOIN staff ON store.manager_staff_id = staff.staff_id
  JOIN address ON store.address_id = address.address_id
- JOIN city on store.address_id=city.city_id
- JOIN country on store.address_id=country.country_id
+ JOIN city on address.city_id=city.city_id
+ JOIN country on city.country_id=country.country_id
 
 
 ---------------------------------------------------------------
